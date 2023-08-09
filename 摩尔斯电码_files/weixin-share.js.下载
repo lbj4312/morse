@@ -1,0 +1,83 @@
+wx.ready(function() {
+	wx.onMenuShareTimeline({
+		title: weixin_share.title,
+		link: weixin_share.link,
+		imgUrl: weixin_share.img,
+		
+		success: function() {
+			_hmt.push(['_trackEvent', weixin_share.name, 'ShareTimeline']);
+			ga('send', 'social', 'WeChat', 'ShareTimeline', weixin_share.name);
+			if(weixin_share.redirect.length){
+				location.href = weixin_share.redirect;
+			}
+		},
+		
+		cancel: function() {
+			_hmt.push(['_trackEvent', weixin_share.name, 'CancelShareTimeline']);
+		}
+	});
+
+	wx.onMenuShareAppMessage({
+		title: weixin_share.title,
+		desc: weixin_share.desc,
+		link: weixin_share.link,
+		imgUrl: weixin_share.img,
+		type: '',		// 分享类型,music、video或link，不填默认为link
+		dataUrl: '',	// 如果type是music或video，则要提供数据链接，默认为空
+
+		success: function() {
+			_hmt.push(['_trackEvent', weixin_share.name, 'ShareAppMessage']);
+			ga('send', 'social', 'WeChat', 'ShareAppMessage', weixin_share.name);
+			if(weixin_share.redirect.length){
+				location.href = weixin_share.redirect;
+			}
+		},
+		
+		cancel: function() {
+			_hmt.push(['_trackEvent', weixin_share.name, 'CancelShareAppMessage']);
+		}
+	});
+
+	wx.onMenuShareQQ({
+		title: weixin_share.title,
+		desc: weixin_share.desc,
+		link: weixin_share.link,
+		imgUrl: weixin_share.img,
+		success: function () { 
+		   _hmt.push(['_trackEvent', weixin_share.name, 'ShareQQ']);
+			ga('send', 'social', 'WeChat', 'ShareQQ', weixin_share.name);
+		},
+		cancel: function () { 
+			_hmt.push(['_trackEvent', weixin_share.name, 'CancelShareQQ']);
+		}
+	});
+
+	wx.onMenuShareWeibo({
+		title: weixin_share.title,
+		desc: weixin_share.desc,
+		link: weixin_share.link,
+		imgUrl: weixin_share.img,
+		success: function () { 
+			_hmt.push(['_trackEvent', weixin_share.name, 'ShareWeibo']);
+			ga('send', 'social', 'WeChat', 'ShareWeibo', weixin_share.name);
+		},
+		cancel: function () { 
+			_hmt.push(['_trackEvent', weixin_share.name, 'CancelShareWeibo']);
+		}
+	});
+
+	wx.onMenuShareQZone({
+		title: weixin_share.title,
+		desc: weixin_share.desc,
+		link: weixin_share.link,
+		imgUrl: weixin_share.img,
+		success: function () { 
+			_hmt.push(['_trackEvent', weixin_share.name, 'ShareQZone']);
+			ga('send', 'social', 'WeChat', 'ShareQZone', weixin_share.name);
+		},
+		cancel: function () { 
+			_hmt.push(['_trackEvent', weixin_share.name, 'CancelShareQZone']);
+		}
+	});
+
+});

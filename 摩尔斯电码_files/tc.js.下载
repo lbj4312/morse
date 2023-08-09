@@ -1,0 +1,4 @@
+   layer.open({
+   content: '资源很大，加载需要较长的时间，请务必耐心等待...<hr><p style="border: none; font-size: 1.5em; line-height: 20px; color: #000; padding: 0px 4px; text-align: center;margin-bottom: 16px;"><b>健康游戏忠告</b></p><b>抵制不良游戏，拒绝盗版游戏。<br>注意自我保护，谨防上当受骗。<br>适度游戏益脑，沉迷游戏伤身。<br>合理安排时间，享受健康生活 。</b><hr>所有代码来自网络，仅供娱乐测试。<br>如有侵犯请联系我们第一时间删除。',
+			btn: '朕知道了'
+			});

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://yx.vkga.cn/mosi/ -->
+<html lang="zh-cmn-Hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>摩尔斯电码加密解密</title>
+	<meta name="description" content=" ">	
+	<link rel="shortcut icon" href="https://res.wumaer.com/tool/images/favicon.ico">
+	<link rel="stylesheet" href="./weui.min.css">
+	<style type="text/css">
+	body,html {height: 100%; -webkit-tap-highlight-color: transparent;}
+	body {overflow-x: hidden; background: #f8f8f8;}
+	.page__bd { height: 100%;}
+
+	a{color: #22ac38;}
+
+	.logo{background: #4dc029; padding: 15px 15px 10px 15px;}
+
+	.page__hd { padding: 15px; }
+	.page__title { text-align: center; color:#22ac38; font-size: 24px; font-weight: 400; }
+	.page__desc { margin-top: 5px; color: #888; text-align: center; font-size: 14px;}
+
+	.weui-article{ background: #fff;}
+	.weui-article h1{color: #22ac38; font-weight: 600; font-size: 20px;}
+	.weui-article h2{color: #22ac38; font-weight: 600; font-size: 18px;}
+	.weui-article h3{color: #22ac38; font-weight: 600; font-size: 16px;}
+
+	.qrcode{padding:15px; text-align: center; background: #fff;}
+	
+	</style>
+		<!-- Baidu Tongji Start -->
+	<script src="./hm.js.下载"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b138f54b02381a89e532ff73b75a3900";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+	<!-- Baidu Tongji  End -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDVWJZN92X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MDVWJZN92X');
+  </script> -->
+  <!-- Google Analytics End -->
+	<script src="./jweixin-1.2.0.js.下载"></script>
+	<script src="./weixin-share.js.下载"></script>	
+	  <script type="text/javascript" src="./xmorse.min.js.下载"></script>
+	
+  <script type="text/javascript">
+    function $_(id) {
+      return document.getElementById(id);
+    }
+    function getoption() {
+      return {
+        space: $_('space').value,
+        short: $_('short').value,
+        long: $_('long').value,
+      };
+    }
+    function encode() {
+      $_('result').innerHTML = xmorse.encode($_('input').value, getoption());
+    }
+    function decode() {
+      $_('result').innerHTML = xmorse.decode($_('input').value, getoption()) || '输入的摩斯码不符合要求！';
+    }
+  </script></head>
+<body ontouchstart="">
+
+<div class="page__bd">
+	<div class="weui-tab">
+				<div class="weui-tab__panel">
+						<div class="page__hd">
+				<h1 class="page__title">摩尔斯电码加密解密</h1>
+				<p class="page__desc"></p>
+			</div>
+						<div class="weui-cells__title">点击下面文字直接复制</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell" style="background: #e9faf9;">
+					<div class="weui-cell__bd">
+						<textarea rows="2" class="weui-textarea" id="result" name="word" style="background: #e9faf9;"></textarea>
+						<script type="text/javascript">
+							(function () {
+							var el = document.querySelector('#result');
+								var autoSelect = function (ev) {
+									var t = ev.currentTarget;
+									function select() { t.setSelectionRange(0, 9999); }
+									select();
+									setTimeout(select, 100);
+								};
+								el.addEventListener('focus', autoSelect, true);
+								el.addEventListener('input', function (ev) {
+									ev.currentTarget.value = ev.srcElement.defaultValue;
+									autoSelect(ev);
+								}, true);
+							}());
+							</script>
+					</div>
+				</div>
+			</div>
+				<div style="display:none">
+					Space: <input type="text" id="space" value="/" placeholder="space">
+					Short: <input type="text" id="short" value="." placeholder="short">
+					Long: <input type="text" id="long" value="-" placeholder="long">
+				</div>	
+			<form action="http://yx.vkga.cn/mosi/" method="post" style="margin-bottom: 15px;">	
+				<div class="weui-cells__title">请输入要转换的文字</div>
+				<div class="weui-cells weui-cells_form">
+					<div class="weui-cell">
+						<div class="weui-cell__bd">
+							<textarea class="weui-textarea" id="input" name="word" placeholder="" rows="3"></textarea>
+							<!-- <div class="weui-textarea-counter"><span>0</span>/200</div> -->
+						</div>
+					</div>
+				</div>
+				<div class="weui-btn-area">
+					<input type="button" onclick="encode()" class="weui-btn weui-btn_mini weui-btn_primary" value="一键加密">
+					
+					<input type="button" onclick="decode()" class="weui-btn weui-btn_mini weui-btn_primary" value="一键解密">
+					
+					<input type="button" onclick="input.value=&#39;&#39;" class="weui-btn weui-btn_mini weui-btn_primary" value="清空">
+					
+				</div>
+			</form>
+            
+			    			</div>
+
+							</div>
+</div>
+
+</body></html>
